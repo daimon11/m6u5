@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preload" href="fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="./style/index.css">
+  <link rel="stylesheet" href="./style/fonts.css">
+
+  <script src="./script/index.js" type="module"></script>
+
+  <title>Article</title>
+</head>
+
+<body>
+
+  <div class="article">
+    <div class="container">
+
+      <div class="wrapper">
+        <div class="article__wrapper">
+          <ul class="breadcrumb">
+            <li class="breadcrumb__item"><a class="link-to-home" href="#">Главная</a><img
+                src="./style/article-modal/img/breadcrumb-icon.svg" alt="Иконка хлебной крошки" class="breadcrumb-icon">
+            </li>
+            <li class="breadcrumb__item"><a class="link-to-blog" href="#" onclick="window.history.go(-1); return false;">Блог</a><img
+                src="./style/article-modal/img/breadcrumb-icon.svg" alt="Иконка хлебной крошки" class="breadcrumb-icon">
+            </li>
+            <li class="breadcrumb__item"><a class="link-to-article" href="article.html"></a></li>
+          </ul>
+
+          <div class="article__text-wrapper">
+            <h2 class="article__title"></h2>
+            <p class="article__paragraf">
+            </p>
+          </div>
+
+          <div class="article__footer">
+
+            <a class="article__btn-back" href="#" onclick="window.history.go(-1); return false;">
+              <img class="article__btn-back-icon" src="./style/article-modal/img/to-back-icon.svg" alt="Иконка стрелки">
+              <span class="btn-text">
+                К списку статей
+              </span>
+            </a>
+
+            <div class="article__autor-block">
+              <h4 class="article__autor-name"></h4>
+
+              <time class="article__time" datetime="дата">дата публикации
+              </time>
+
+              <div class="article__user-box">
+
+                <figure class="topic__user">
+                  <img src="./img/icon-view.svg" alt="Иконка просмотра" class="topic__views-icon">
+                  <figcaption class="topic__views-text">0.6K</figcaption>
+                </figure>
+                <figure class="topic__user">
+                  <img src="./img/icon-chat.svg" alt="Иконка чата" class="topic__chat-icon">
+                  <figcaption class="topic__chat-text">0</figcaption>
+                </figure>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <aside class="adds-banners">
+          <article class="adds-banners__turkey banner">
+            <h4 class="adds-banners__title">
+              Горящие туры в Стамбул
+              от 20 000 руб.
+            </h4>
+            <p class="adds-banners__description">
+              Окунись в настоящую восточную сказку
+            </p>
+            <img class="adds-banners__img" src="./style/adds-banners/img/adds-img-1.png" alt="Изображение Стамбула">
+          </article>
+          <article class="adds-banners__renault banner">
+            <h4 class="adds-banners__title">
+              Новый RENAULT DUSTER
+            </h4>
+            <p class="adds-banners__description">
+              Легендарный внедорожник в новом дизайне
+            </p>
+            <img class="adds-banners__img" src="./style/adds-banners/img/adds-img-2.jpg" alt="Изображение автомобиля">
+          </article>
+        </aside>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+</body>
+
+</html>
