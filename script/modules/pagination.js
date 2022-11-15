@@ -3,34 +3,34 @@ export const paginationControl = (btnPrev, btnNext, pagesBtn, currentActive) => 
 
   pagesBtn.forEach((item, index) => {
     if ((index + 1) === currentActive) {
-      item.classList.add('item__active');
+      item.classList.add('item-active');
     } else {
-      item.classList.remove('item__active');
+      item.classList.remove('item-active');
     }
   });
 
   if (currentActive === 1) {
     btnPrev.setAttribute('disabled', 'disabled');
-    btnPrev.querySelector('.item-icon').classList.add('item-icon__disabled');
-    btnNext.querySelector('.item-icon').classList.remove('item-icon__disabled');
+    btnPrev.querySelector('.item-icon').classList.add('item-icon-disabled');
+    btnNext.querySelector('.item-icon').classList.remove('item-icon-disabled');
   } else if (currentActive === 3) {
     btnNext.setAttribute('disabled', 'disabled');
-    btnNext.querySelector('.item-icon').classList.add('item-icon__disabled');
-    btnPrev.querySelector('.item-icon').classList.remove('item-icon__disabled');
+    btnNext.querySelector('.item-icon').classList.add('item-icon-disabled');
+    btnPrev.querySelector('.item-icon').classList.remove('item-icon-disabled');
   } else {
     btnPrev.removeAttribute('disabled', 'disabled');
     btnNext.removeAttribute('disabled', 'disabled');
-    btnPrev.querySelector('.item-icon').classList.remove('item-icon__disabled');
-    btnNext.querySelector('.item-icon').classList.remove('item-icon__disabled');
+    btnPrev.querySelector('.item-icon').classList.remove('item-icon-disabled');
+    btnNext.querySelector('.item-icon').classList.remove('item-icon-disabled');
   }
 
   const update = () => {
     pagesBtn.forEach((item, index) => {
       if ((index + 1) === currentActive) {
         item.click();
-        item.classList.add('item__active');
+        item.classList.add('item-active');
       } else {
-        item.classList.remove('item__active');
+        item.classList.remove('item-active');
       }
     })
   }

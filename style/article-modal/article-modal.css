@@ -126,3 +126,25 @@
   gap: 15px;
   align-items: center;
 }
+
+.article__user:first-child {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.article__user:last-child {
+  display: flex;
+  flex-direction: row;
+  gap: 11px;
+  align-items: center;
+}
+
+.article__views-text,
+.article__chat-text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  color: #8F8F8F;
+}

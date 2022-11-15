@@ -16,14 +16,7 @@ const loadArticle = async (id) => {
 
 export const renderArticle = async (
   id,
-  linkArticle,
-  articleTitle,
-  articleParagraf,
-  autorName,
-  articleTime,
-  articleChat,
-  articleViews,
-  articleModal,
+  articleModal
 ) => {
 
   const params = new URLSearchParams(window.location.search);
@@ -34,56 +27,60 @@ export const renderArticle = async (
   console.log('arr', arr);
   console.log('autorId', autorId);
 
-  articleTitle.innerHTML = `${arr.title}`;
-  linkArticle.innerHTML = `${arr.title}`;
-  articleParagraf.innerHTML = `${arr.body}`;
-  autorName.innerHTML = `${autorId.name}`;
-  articleChat.innerHTML = `${0}`;
-  articleViews.innerHTML = `${0}`;
-  articleTime.innerHTML = `${date}`;
+  const breadcrumb = document.createElement('ul');
+  breadcrumb.classList.add('breadcrumb');
+  breadcrumb.innerHTML = `
+    <li class="breadcrumb__item">
+      <span class="link-to-home">Главная</span>
+    <img src="./style/article-modal/img/breadcrumb-icon.svg" alt="Иконка хлебной крошки" class="breadcrumb-icon"> 
+    </li> 
+    <li class="breadcrumb__item">
+      <span class="link-to-blog">Блог</span>
+    <img src="./style/article-modal/img/breadcrumb-icon.svg" alt="Иконка хлебной крошки" class="breadcrumb-icon"> 
+    </li> <li class="breadcrumb__item">
+      <span class="link-to-article">${arr.title}
+      </span>
+    </li>
+  `;
+  const textWrapper = document.createElement('div');
+  textWrapper.classList.add('article__text-wrapper');
+  textWrapper.innerHTML = `
+  <h2 class="article__title">${arr.title}</h2>
+  <p class="article__paragraf">${arr.body}</p>
+  `;
+
+  const footer = document.createElement('div');
+  footer.classList.add('article__footer');
+  footer.innerHTML = `
+    <a class="article__btn-back" href="#" onclick="window.history.go(-1); return false;">
+    <img class="article__btn-back-icon" src="./style/article-modal/img/to-back-icon.svg" alt="Иконка стрелки">
+    <span class="btn-text">
+      К списку статей
+    </span>
+    </a>
+
+    <div class="article__autor-block">
+    <h4 class="article__autor-name">${autorId.name}</h4>
+
+    <span class="article__time">${date}</span>
+
+    <div class="article__user-box">
+
+      <figure class="article__user">
+        <img src="./img/icon-view.svg" alt="Иконка просмотра" class="article__views-icon">
+        <figcaption class="article__views-text">${0}</figcaption>
+      </figure>
+      <figure class="article__user">
+        <img src="./img/icon-chat.svg" alt="Иконка чата" class="article__chat-icon">
+        <figcaption class="article__chat-text">${0}</figcaption>
+      </figure>
+
+    </div>
+
+    </div>
+  `
 
   articleModal.classList.add('article_visible');
-};
-
-
-export const articleModalControl = (
-  linkArticle,
-  articleTitle,
-  articleParagraf,
-  autorName,
-  articleTime,
-  articleChat,
-  articleViews,
-  articleModal,
-  articlesList,
-) => {
-
-  articlesList.addEventListener('click', e => {
-    const target = e.target;
-    console.log(target);
-    if (target.closest('.topic__title') || target.closest('.topic__no-img')) {
-      const id = target.closest('.topic').id;
-      renderArticle(
-        id,
-        linkArticle,
-        articleTitle,
-        articleParagraf,
-        autorName,
-        articleTime,
-        articleChat,
-        articleViews,
-        articleModal,
-      );
-    }
-  });
-  
-  // articleModal.addEventListener('click', e => {
-  //   const target = e.target;
-  //   console.log(target);
-  //   if (target.closest('.link-to-blog') || target.closest('.article__btn-back') || target.closest('.btn-text') || target.closest('.article__btn-back-icon')) {
-  //     articleModal.classList.remove('article_visible');
-  //   }
-  // })
-
-
+  articleModal.append(breadcrumb, textWrapper, footer);
+  document.querySelector('.adds-banners').classList.remove('visually-hidden');
 };

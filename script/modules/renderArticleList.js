@@ -26,14 +26,13 @@ export const renderGoods = async (currentPage) => {
       const topic = document.createElement('a');
       topic.className = 'articles__item';
       topic.id = `${item.id}`;
-      // topic.setAttribute('onclick', "return false;")
       topic.href = `article.html?id=${item.id}`;
       topic.className = 'topic';
 
       topic.innerHTML = `
     ${(item.image) ?
           `<img src="${image}" alt="Изображение ${item.time}" class="topic__img">` :
-          `<img src="" class="topic__no-img">`
+          `<img src="./img/no-img.png">`
         }
       <div class="topic__wrapper">
         <div class="topic__title-wrapper">
@@ -60,4 +59,5 @@ export const renderGoods = async (currentPage) => {
     });
   }
   displayList();
+  document.querySelector('.footer').classList.remove('visually-hidden');
 };

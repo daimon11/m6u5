@@ -22,14 +22,6 @@
   cursor: pointer;
 }
 
-.topic__no-img {
-  width: 195px;
-  height: 195px;
-  background: gray;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
 .topic__wrapper {
   display: flex;
   flex-direction: column;
@@ -130,11 +122,11 @@
   cursor: pointer;
 }
 
-.item__active {
+.item-active {
   color: #3670C7;
   border: 2px solid #3670C7;
 }
 
-.item-icon__disabled {
+.item-icon-disabled {
   fill: #8F8F8F;
 }

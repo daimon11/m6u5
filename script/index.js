@@ -19,25 +19,10 @@ if (searchParams.has("id")) {
   let id = searchParams.get("id") ?
     searchParams.get("id") : '';
 
-  const linkArticle = document.querySelector('.link-to-article');
-  const articleTitle = document.querySelector('.article__title');
-  const articleParagraf = document.querySelector('.article__paragraf');
-  const autorName = document.querySelector('.article__autor-name');
-  const articleTime = document.querySelector('.article__time');
-  const articleChat = document.querySelector('.topic__chat-text');
-  const articleViews = document.querySelector('.topic__views-text');
-
-  const articleModal = document.querySelector('.article');
+  const articleModal = document.querySelector('.article__wrapper');
 
   renderArticle(    
     id,
-    linkArticle,
-    articleTitle,
-    articleParagraf,
-    autorName,
-    articleTime,
-    articleChat,
-    articleViews,
     articleModal
     );
 } else {
