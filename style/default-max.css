@@ -17,8 +17,10 @@ html {
   font-size: 22px;
   font-weight: 400;
   line-height: 33px;
-  color: #2d2d2d; /*цвет под проект*/
-  background-color: white; /*цвет под проект*/
+  color: #2d2d2d;
+  /*цвет под проект*/
+  background-color: white;
+  /*цвет под проект*/
 }
 
 img {
@@ -37,7 +39,8 @@ a {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -55,6 +58,23 @@ blockquote {
 
 iframe {
   border: none;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="time"],
+input[type="date"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  font-size: 14px;
 }
 
 .visually-hidden {
@@ -75,7 +95,6 @@ section {
 
 .main {
   margin: 0 auto;
-  padding: 172px 243px 100px;
 }
 
 .page {
@@ -83,5 +102,24 @@ section {
 }
 
 .container {
-  padding: 150px 45px 0;
+  padding: 0 150px;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.overlay svg {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
 }

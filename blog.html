@@ -6,53 +6,75 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preload" href="fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/lato-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="./style/index.css">
   <link rel="stylesheet" href="./style/fonts.css">
 
-  <script type="module" src="./script/index.js"></script>
+  <script type="module" src="script/index.js"></script>
+  <!-- <script src="https://gist.github.com/Maksim-Methed/4566b524529c5076cff39764575b31e5.js"></script> -->
 
-  <title>ShopOnline</title>
+  <title>News</title>
 </head>
 
 <body class="page">
-  <main class="main">
-    <section class="articles">
 
-      <h1 class="visually-hidden">Блог</h1>
-
-      <div class="articles__list">
+  <header class="header visually-hidden">
+    <div class="container">
+      <div class="header__wrapper">
+        <div class="logo-wrapper">
+          <img class="logo-img" src="./img/logo-img.svg" alt="Лого сайта">
+        </div>
+        <form action="#" class="header__form">
+          <label for="" class="form__label">
+            <input class="header__search-line" type="text" placeholder="Я хочу знать про..." name="body">
+            <button class="header__btn-search" type="submit"></button>
+          </label>
+          <div class="header__lang">
+            <select class="header__lang-select" name="lang">
+              <option class="header__select" value=”RUS”>Россия</option>
+              <option class="header__select" value=”KZ”>Казахстан</option>
+              <option class="header__select" value=”BL”>Беларусь</option>
+            </select>
+          </div>
+        </form>
 
       </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="search">
+    </section>
+
+    <section class="new visually-hidden">
     </section>
 
   </main>
 
-  <div class="footer visually-hidden">
-    <button class="footer__btn footer__btn-prev">
-      <svg width="29" height="19" viewBox="0 0 29 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="item-icon item-icon-disabled"
-          d="M28.375 7.95833H6.52958L12.0487 2.42375L9.875 0.25L0.625 9.5L9.875 18.75L12.0487 16.5762L6.52958 11.0417H28.375V7.95833Z"
-          fill="#3670C7" />
-      </svg>
-
-    </button>
-    <div class="footer__page-list">
-      <a class="item item-active" href="blog.html">1</a>
-      <a class="item" href="?page=2">2</a>
-      <a class="item" href="?page=3">3</a>
+  <footer class="footer visually-hidden">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="logo-wrapper">
+          <img class="logo-img" src="./img/logo-img.svg" alt="Лого сайта">
+        </div>
+        <span class="footer__text">© 2020-2022 News</span>
+        <ul class="footer__social-links">
+          <li class="footer__social-item">
+            <img src="./img/twiter-icon.svg" alt="Иконка твитера" class="footer__img-soc twiter">
+          </li>
+          <li class="footer__social-item">
+            <img src="./img/xz-icon.svg" alt="Иконка хз" class="footer__img-soc xz">
+          </li>
+          <li class="footer__social-item">
+            <img src="./img/vk-icon.svg" alt="Иконка вк" class="footer__img-soc vk">
+          </li>
+        </ul>
+      </div>
     </div>
-    <button class="footer__btn footer__btn-next">
-      <svg width="29" height="19" viewBox="0 0 29 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="item-icon"
-          d="M0.625 7.95833H22.4704L16.9513 2.42375L19.125 0.25L28.375 9.5L19.125 18.75L16.9513 16.5763L22.4704 11.0417H0.625V7.95833Z"
-          fill="#3670C7" />
-      </svg>
-
-    </button>
-  </div>
+  </footer>
 
 </body>
 
