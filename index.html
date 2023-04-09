@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&family=Inter:wght@600;700&family=Roboto:ital,wght@0,500;0,700;0,900;1,400&display=swap"
+    rel="stylesheet">
+
+  <script src="../node_modules/pagination/release/pagination.t.min.js"></script>
+  <script src="./script/main.js" type="module"></script>
+  <title>Module 5. CRM</title>
+</head>
+
+<body>
+  <main class="page">
+
+    <div class="crm">
+      <div class="crm__wrapper">
+        <div class="crm__tittle-box">
+          <h1 class="crm__title">CRM</h1>
+          <p class="crm__finish-price visually-hidden">
+            Итоговая стоимость: <span class="crm__bold-text">0</span>
+          </p>
+        </div>
+
+        <div class="crm__content">
+          <div class="crm__head">
+            <div class="crm__filtr-search">
+              <button class="crm__white-button">
+                <img class="filter-icon" src="./style/crm/icons/filter-icon.svg" alt="Иконка фильтра">
+                <span class="crm__text-black">Фильтр</span>
+              </button>
+
+              <form class="crm__search" action="#">
+                <label class="crm__search-field">
+                  <input class="crm__input-search" type="text" size="30"
+                    placeholder="Поиск по наименованию и категории" name="search-body">
+                  <button class="crm__button-search">
+                  </button>
+                </label>
+
+              </form>
+            </div>
+            <button class="crm__button">
+              Добавить товар
+            </button>
+          </div>
+
+          <div class="crm__table-wrapper">
+            <table class="crm__table">
+              <thead class="crm__table-head">
+                <tr class="crm__table-tr">
+                  <th class="crm__table-th crm__table-th--pos_left">ID</th>
+                  <th class="crm__table-th crm__table-th--pos_left">Наименование</th>
+                  <th class="crm__table-th crm__table-th--pos_left">Категория</th>
+                  <th class="crm__table-th">Ед/Изм</th>
+                  <th class="crm__table-th">Количество</th>
+                  <th class="crm__table-th crm__table-th--pos_right">Цена</th>
+                  <th class="crm__table-th crm__table-th--pos_right">Итог</th>
+                  <th class="crm__table-th crm__table-th--flex"></th>
+                </tr>
+              </thead>
+              <tbody class="crm__table-body paging">
+
+                <!-- содержимое таблицы -->
+
+              </tbody>
+            </table>
+            <div class="crm__table-footer">
+              <p class="crm__quantity-elements">
+                Показывать на странице:
+                <select class="crm__number-elements" name="user__number-elements">
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+              </p>
+              <p class="crm__page-number">1-10 of 276</p>
+              <button class="previous-page">
+                <img src="./style/crm/icons/previous-page.svg" alt="Иконка кнопки предыдущей страницы"
+                  class="next-icon">
+              </button>
+              <button class="next-page">
+                <img src="./style/crm/icons/next-page.svg" alt="Иконка кнопки следущей страницы" class="next-icon">
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    </div>
+
+
+
+  </main>
+</body>
+
+</html>

@@ -9,23 +9,23 @@ html {
   box-sizing: inherit;
 }
 
-.page {
+body {
   min-width: 320px;
   min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  /* указать шрифт проект*/
-  font-size: 22px;
+  font-family: Arial, sans-serif;
+  /* указать шрифт под проект*/
+  font-size: 16px;
   font-weight: 400;
-  line-height: 33px;
-  color: #2d2d2d; /*цвет под проект*/
-  background-color: white; /*цвет под проект*/
+  color: #ffffff;
+  /*цвет под ваш проект*/
+  background-color: #F2F0F9;
+  /*цвет под ваш проект*/
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
-
 
 button {
   padding: 0;
@@ -37,7 +37,9 @@ a {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol,
+fieldset {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -53,9 +55,34 @@ blockquote {
   margin: 0;
 }
 
-iframe {
-  border: none;
+figure {
+  padding: 0;
 }
+
+iframe,
+input,
+fieldset {
+  border: 0 none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="time"],
+input[type="date"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+}
+
+/*
+Доступно скрываю элементы
+*/
 
 .visually-hidden {
   position: absolute !important;
@@ -69,19 +96,26 @@ iframe {
   overflow: hidden;
 }
 
-section {
-  margin: 0 auto;
-}
+/*
+Пример контейнера
+Если контейнер 1180px по макету,
+то для max-width прибавляем паддинги 30px*2, 
+в итоге 1240px
+Чтобы контент не прижимался к краям экрана
+*/
 
-.main {
+.container {
+  max-width: 1300px;
+  padding: 0;
   margin: 0 auto;
-  padding: 172px 243px 100px;
 }
 
 .page {
-  margin: 0 auto;
-}
-
-.container {
-  padding: 150px 45px 0;
+  position: relative;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  color: #6E6893;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
 }
