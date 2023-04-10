@@ -19,8 +19,6 @@ const init = () => {
     document.querySelector('.page .crm .crm__content .crm__head .crm__button');
   const table = document.querySelector('.crm__table-body');
   const totalSumAllSpan = document.querySelector('.crm__bold-text');
-  const formSearch = document.querySelector('.crm__search');
-  console.log(formSearch);
 
   window.onload = productsRender(URL, amountElements.value);
 
@@ -49,27 +47,24 @@ const init = () => {
   });
   deleteItemInTable(table, amountElements.value);
 
-  formSearch.addEventListener('submit', async e => {
-    e.preventDefault();
-    console.log('запрос поиска submit');
+  const doneTyping = (event) => {
+    console.log(event.target.value);
+    productsRender(`https://quickest-cubic-pyroraptor.glitch.me/api/goods?search=${event.target.value}`, amountElements.value);
+  };
 
-    const formData = new FormData(e.target);
-    const newContact = Object.fromEntries(formData);
+  const debounce = (callback, delay) => {
+    let typingTimer;
 
-    console.log(newContact);
-  });
+    return (...args) => {
+      typingTimer && clearTimeout(typingTimer);
+      typingTimer = setTimeout(() => callback(...args), delay);
+    };
+  };
+
+  const debounceTyping = debounce(doneTyping, 300);
+
+  document.querySelector('.crm__input-search').addEventListener('input', debounceTyping);
+
 };
 
-
-
 init();
-
-// доделать:
-//* 1) Баг - при внесении изменений в товар пропадает изображение
-//! 2) узнать как работает фильтр
-//* 3) разобраться с пагинацией
-//* 4) добавить модальное окно при удалении
-//* 5) Добавить варианты выбора в графу "категории в модальном окне"
-//* 6) добавить кнопку удаления при наведении картинку товара в модальном окне и разобраться почему задваивается блок с картинкой
-//* 7) Перекинуть пагинацию в отдельный блок js
-//! 8) Реализовать поисковик
